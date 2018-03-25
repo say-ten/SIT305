@@ -1,4 +1,4 @@
-March 25th:
+March 25, 2018:
 -------------------------------------------------------------
 Added stats to the Character Class.
   - Health
