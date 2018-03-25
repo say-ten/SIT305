@@ -1,0 +1,6 @@
+March 25th:
+-------------------------------------------------------------
+Added stats to the Character Class.
+  - Health
+  - Attack
+  - Defence
