@@ -1,9 +1,14 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Class1
+
+public class Character : MonoBehaviour
 {
-	public Class1()
-	{
-        testing 123
-	}
+    public int Health { get; set; }
+    public int Attack { get; set; }
+    public int Defence { get; set; }
+    public Vector2 RoomIndex { get; set; }
+    public List<string> Inventory { get; set; }
+
 }
