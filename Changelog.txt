@@ -13,3 +13,7 @@ March 27, 2018:
 March 31, 2018:
 -------------------------------------------------------------
   - Updated files to unity format
+  - Added Monster class
+  - Added Monster1 class
+  - Added Monster2 class
+  - Added Monster3 class
