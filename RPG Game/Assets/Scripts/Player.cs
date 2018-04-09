@@ -24,10 +24,10 @@ namespace RPGGame
             Inventory.Add(item);
         }
 
-        public override void TakeDamage(int amount)
+        public override void Attacked(int hp)
         {
             Debug.Log("You have taken damage");
-            base.TakeDamage(amount);
+            base.Attacked(hp);
         }
     }
 }

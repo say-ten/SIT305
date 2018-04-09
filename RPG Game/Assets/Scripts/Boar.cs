@@ -8,9 +8,9 @@ namespace RPGGame
     {
         void Start()
         {
-            Health = 0;
-            Attack = 0;
-            Defence = 0;
+            Health = 25;
+            Attack = 7;
+            Defence = 5;
             Inventory.Add("Boar monster core");
         }
     }
