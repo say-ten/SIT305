@@ -8,7 +8,6 @@ namespace RPGGame
     {
         public int Floor { get; set; }
 
-        // Use this for initialization
         void Start()
         {
             Floor = 0;
