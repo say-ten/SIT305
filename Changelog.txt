@@ -17,3 +17,18 @@ March 31, 2018:
   - Added Monster1 class
   - Added Monster2 class
   - Added Monster3 class
+  
+April 10, 2018:
+-------------------------------------------------------------
+  - Named monsters
+  - Updated monster stats
+  - Added Player class
+
+April 10, 2018:
+-------------------------------------------------------------
+  - Added LICENSE.txt
+
+April 12, 2018:
+-------------------------------------------------------------
+  - Added MonsterDatabase class
+  - Added MonsterDatabase scene
