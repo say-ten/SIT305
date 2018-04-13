@@ -1,34 +1,34 @@
 March 25, 2018:
 -------------------------------------------------------------
-Added stats to the Character Class.
+Added stats to the Character Class. [Alex]
   - Health
   - Attack
-  - Defence
+  - Defence 
   
 March 27, 2018:
 -------------------------------------------------------------
-  - Health loss when attacked
-  - Game over message
+  - Health loss when attacked [Anthony]
+  - Game over message [Anthony]
 
 March 31, 2018:
 -------------------------------------------------------------
-  - Updated files to unity format
-  - Added Monster class
-  - Added Monster1 class
-  - Added Monster2 class
-  - Added Monster3 class
+  - Updated files to unity format [Anthony]
+  - Added Monster class [Anthony]
+  - Added Monster1 class [Anthony]
+  - Added Monster2 class [Anthony]
+  - Added Monster3 class [Anthony]
   
-April 10, 2018:
+April 10, 2018: 
 -------------------------------------------------------------
-  - Named monsters
-  - Updated monster stats
-  - Added Player class
+  - Named monsters [Anthony]
+  - Updated monster stats [Anthony]
+  - Added Player class [Alex]
 
 April 10, 2018:
 -------------------------------------------------------------
-  - Added LICENSE.txt
+  - Added LICENSE.txt 
 
 April 12, 2018:
 -------------------------------------------------------------
-  - Added MonsterDatabase class
-  - Added MonsterDatabase scene
+  - Added MonsterDatabase class [Anthony]
+  - Added MonsterDatabase scene [Anthony]
