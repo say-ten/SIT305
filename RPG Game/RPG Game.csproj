@@ -259,6 +259,7 @@
     <Compile Include="Assets\Scripts\Boar.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Chest.cs" />
+    <Compile Include="Assets\Scripts\Dungeon.cs" />
     <Compile Include="Assets\Scripts\Griffin.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\MonsterDatabase.cs" />

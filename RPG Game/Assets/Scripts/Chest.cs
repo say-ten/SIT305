@@ -6,7 +6,7 @@ namespace RPGGame
 {
     public class Chest : MonoBehaviour
     {
-        public Monster Monster { get; set}
+        public Monster Monster { get; set; }
         public string Item { get; set; }
         public bool Trap { get; set; }
         public bool Heal { get; set; }
@@ -23,7 +23,7 @@ namespace RPGGame
             }
             else if(Random.Range(0,5) == 2)
             {
-                Monster = MonsterDatabase.Instance.Monsters[Random.Range(0, MonsterDatabase.Instance.Monsters.Count)];
+                Monster = MonsterDatabase.Instance.GetRandomEnemy();
             }
             else
             {
