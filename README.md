@@ -24,3 +24,9 @@ https://github.com/say-ten/SIT305/tree/master/RPG%20Game/Assets/Scripts
 - In your changelog, make sure you put the author at the end of each line in square brackets []
 - Do not hardwire any game constants. E.g. "Boar: Health = 25; Attack = 7; Defence = 5;" .. these should all be in an external text file (e.g. a .json file). No numbers/details/gameplay scenarios/levels/etc should be in game code. Always in external game data files (text files).
 
+
+# Henry's Comments 27/April
+- your changelog doesn't match your work done (e.g. commits)
+- still missing data files, which needs serious attention quickly, as you can't start making your game world until you have the ability to load the game world (from your data files). And if you don't start writing your game world, you have nothing to test.
+
+
