@@ -32,3 +32,12 @@ April 12, 2018:
 -------------------------------------------------------------
   - Added MonsterDatabase class [Anthony]
   - Added MonsterDatabase scene [Anthony]
+
+April 16, 2018:
+-------------------------------------------------------------
+  - Added Dungeon class [Alex]
+
+April 27, 2018:
+-------------------------------------------------------------
+  - Added Region class [Anthony]
+  - Added Region scene [Anthony]
