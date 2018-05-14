@@ -45,13 +45,22 @@ April 27, 2018:
 May 10, 2018:
 -------------------------------------------------------------
   - Added User Interface [Anthony]
+    - Direction buttons
+    - Dynamic buttons
+    - HUD and text box
 
 May 13, 2018:
 -------------------------------------------------------------
+  - Added console class [Anthony]
   - Updated text console [Anthony]
 
 May 14, 2018:
 -------------------------------------------------------------
   - Updated Player class [Anthony]
   - Added Interactions class [Anthony]
-  - Made lots of small changes [Anthony]
+  - Added player scene [Anthony]
+  - Added Interactions scene [Anthony]
+  - Created itemdatabase [Alex]
+  - Created lion class [Alex]
+  - Implemented secondary item drops (collectable gems) [Alex][Anthony]
+  
