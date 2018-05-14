@@ -24,7 +24,7 @@ namespace RPGGame
 
         public void ResetDynamicControls()
         {
-            foreach(Button button in dynamicControls)
+            foreach (Button button in dynamicControls)
             {
                 button.interactable = false;
             }
@@ -35,7 +35,7 @@ namespace RPGGame
             this.Monster = player.Dungeon.Monster;
             dynamicControls[0].interactable = true;
             dynamicControls[1].interactable = true;
-//            UIController.OnMonsterUpdate(this.Monster);
+            //            UIController.OnMonsterUpdate(this.Monster);
         }
 
         public void StartChest()
@@ -74,7 +74,7 @@ namespace RPGGame
 
         public void Attack()
         {
-            int playerDamageAmount = (int)(Random.value *(player.Attack - Monster.Defence));
+            int playerDamageAmount = (int)(Random.value * (player.Attack - Monster.Defence));
             int monsterDamageAmount = (int)(Random.value * (Monster.Attack - player.Defence));
             Console.Instance.Entry("<color=#59ffa1>You dealt <b>" + playerDamageAmount + "</b> damage!</color>");
             Console.Instance.Entry("<color=#59ffa1>The monster attacked dealing <b>" + monsterDamageAmount + "</b> damage back!</color>");
@@ -82,11 +82,11 @@ namespace RPGGame
             Monster.Attacked(playerDamageAmount);
         }
 
-        public void Flee()
+        public void Escape()
         {
-            int monsterDamageAmount = (int)(Random.value * (Monster.Attack - (player.Defence*.5f)));
+            int monsterDamageAmount = (int)(Random.value * (Monster.Attack - (player.Defence * .5f)));
             player.Dungeon.Monster = null;
-//            UIController.OnMonsterUpdate(null);
+            //           UIController.OnMonsterUpdate(null);
             player.Attacked(monsterDamageAmount);
             Console.Instance.Entry("<color=#59ffa1>During the escape the monster dealt <b>" + monsterDamageAmount + "</b> damage!</color>");
             player.Investigate();
@@ -101,14 +101,14 @@ namespace RPGGame
 
         public void Pickup()
         {
-            player.AddItem(this.Monster.Inventory[0]);
+//            player.AddItem(this.Monster.Inventory[0]);
             Console.Instance.Entry(string.Format(
-                "<color=#56FFC7FF>You've defeated {0}. Searching the remains, {1} found!</color>", 
+                "<color=#56FFC7FF>You've defeated {0}. Searching the remains, {1} found!</color>",
                 this.Monster.Description, this.Monster.Inventory[0]
             ));
             this.Monster = null;
             player.Investigate();
-//            UIController.OnMonsterUpdate(this.Monster);
+            //            UIController.OnMonsterUpdate(this.Monster);
         }
     }
 }

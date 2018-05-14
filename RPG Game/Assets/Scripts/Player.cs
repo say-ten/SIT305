@@ -10,7 +10,7 @@ namespace RPGGame
         public Dungeon Dungeon { get; set; }
 
         [SerializeField]
- //       Interactions interactions;
+        Interactions interactions;
         public Region region;
 
         void Start()
@@ -20,16 +20,16 @@ namespace RPGGame
             Attack = 15;
             Defence = 5;
             Inventory = new List<string>();
-            RoomIndex = new Vector2(2,2);
-/*            UIController.OnPlayerStatChange();
-            UIController.OnPlayerInventoryChange();*/
+            RoomIndex = new Vector2(2, 2);
+            /*            UIController.OnPlayerStatChange();
+                        UIController.OnPlayerInventoryChange();*/
             this.Dungeon = region.Dungeon[(int)RoomIndex.x, (int)RoomIndex.y];
             this.Dungeon.Empty = true;
         }
 
         public void Navigation(int direction)
         {
-            if (this.Dungeon.Monster)
+            if (Dungeon.Monster)
             {
                 return;
             }
@@ -62,24 +62,24 @@ namespace RPGGame
             this.Dungeon = region.Dungeon[(int)RoomIndex.x, (int)RoomIndex.y];
 
             Debug.Log(RoomIndex);
- //           interactions.ResetDynamicControls();
+            interactions.ResetDynamicControls();
             if (this.Dungeon.Empty)
             {
                 Console.Instance.Entry("Looking around you're in a empty room.");
             }
             else if (this.Dungeon.Chest != null)
             {
-//                interactions.StartChest();
+                interactions.StartChest();
                 Console.Instance.Entry("Chest found, open?");
             }
             else if (this.Dungeon.Monster != null)
             {
                 Console.Instance.Entry("You are attacked by a " + Dungeon.Monster.Description + "! Select an action");
- //               interactions.StartFight();
+                interactions.StartFight();
             }
             else if (this.Dungeon.Exit)
             {
-//                interactions.StartExit();
+                interactions.StartExit();
                 Console.Instance.Entry("Door to next floor found. Would you like to exit?");
             }
         }
@@ -91,8 +91,9 @@ namespace RPGGame
 
         public void AddItem(int item)
         {
-//            Inventory.Add(ItemDatabase.Instance.Items[item]);
-//            UIController.OnPlayerInventoryChange();
+            Console.Instance.Entry("Given item");
+            //            Inventory.Add(ItemDatabase.Instance.Items[item]);
+            //            UIController.OnPlayerInventoryChange();
         }
 
         public override void Attacked(int hp)
