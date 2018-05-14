@@ -25,7 +25,7 @@ namespace RPGGame
             int roll = Random.Range(0,30);
             if (roll > 0 && roll < 6)
             {
-                Monster = MonsterDatabase.Instance.GetRandomEnemy();
+                Monster = MonsterDatabase.Instance.GetRandomMonster();
                 Monster.RoomIndex = RoomIndex;
             }
             else if (roll > 15 && roll < 20)

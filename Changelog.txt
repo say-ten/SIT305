@@ -49,3 +49,9 @@ May 10, 2018:
 May 13, 2018:
 -------------------------------------------------------------
   - Updated text console [Anthony]
+
+May 14, 2018:
+-------------------------------------------------------------
+  - Updated Player class [Anthony]
+  - Added Interactions class [Anthony]
+  - Made lots of small changes [Anthony]

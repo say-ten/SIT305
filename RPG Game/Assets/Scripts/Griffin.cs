@@ -8,6 +8,7 @@ namespace RPGGame
     {
         void Start()
         {
+            Description = "Griffin";
             Health = 30;
             Attack = 10;
             Defence = 5;

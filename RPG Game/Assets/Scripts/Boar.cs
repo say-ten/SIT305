@@ -8,6 +8,7 @@ namespace RPGGame
     {
         void Start()
         {
+            Description = "Boar";
             Health = 25;
             Attack = 7;
             Defence = 5;

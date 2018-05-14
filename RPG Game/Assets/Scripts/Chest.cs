@@ -9,7 +9,7 @@ namespace RPGGame
         public Monster Monster { get; set; }
         public string Item { get; set; }
         public bool Trap { get; set; }
-        public bool Heal { get; set; }
+        public bool Potion { get; set; }
 
         public Chest()
         {
@@ -19,11 +19,11 @@ namespace RPGGame
             }
             else if (Random.Range(0,5) == 2)
             {
-                Heal = true;
+                Potion = true;
             }
             else if(Random.Range(0,5) == 2)
             {
-                Monster = MonsterDatabase.Instance.GetRandomEnemy();
+                Monster = MonsterDatabase.Instance.GetRandomMonster();
             }
             else
             {

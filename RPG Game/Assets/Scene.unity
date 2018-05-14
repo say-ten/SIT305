@@ -438,7 +438,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1138544714}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -619,7 +619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Open Box
+  m_Text: Open Chest
 --- !u!222 &488556505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 809358627}
   - component: {fileID: 809358626}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Escape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1127,7 +1127,7 @@ GameObject:
   - component: {fileID: 971855136}
   - component: {fileID: 971855135}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: West Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1190,7 +1190,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 971855136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1707119923}
+        m_MethodName: Navigation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &971855136
@@ -1238,7 +1249,7 @@ GameObject:
   - component: {fileID: 973001525}
   - component: {fileID: 973001524}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: South Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1301,7 +1312,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 973001525}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1707119923}
+        m_MethodName: Navigation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &973001525
@@ -1349,7 +1371,7 @@ GameObject:
   - component: {fileID: 973577093}
   - component: {fileID: 973577092}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1460,7 +1482,7 @@ GameObject:
   - component: {fileID: 1017244706}
   - component: {fileID: 1017244705}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1735,7 +1757,7 @@ GameObject:
   - component: {fileID: 1162143270}
   - component: {fileID: 1162143269}
   m_Layer: 5
-  m_Name: Button
+  m_Name: North Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1798,7 +1820,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1162143270}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1707119923}
+        m_MethodName: Navigation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1162143270
@@ -2401,9 +2434,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707119921}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5219aedf35eab424081e9bc86853e694, type: 3}
+  m_Script: {fileID: 11500000, guid: 09810ed83c1f03e438ec1e294f166f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  region: {fileID: 0}
 --- !u!4 &1707119924
 Transform:
   m_ObjectHideFlags: 0
@@ -2541,7 +2575,7 @@ GameObject:
   - component: {fileID: 1883667729}
   - component: {fileID: 1883667728}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: East Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2604,7 +2638,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1883667729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1707119923}
+        m_MethodName: Navigation
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1883667729
@@ -2843,7 +2888,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Leave Floor
+  m_Text: Exit Floor
 --- !u!222 &2012335751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2936,7 +2981,7 @@ GameObject:
   - component: {fileID: 2058581105}
   - component: {fileID: 2058581104}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3066,6 +3111,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000026886448}
+  m_AnchoredPosition: {x: 0, y: -0.00003306018}
   m_SizeDelta: {x: 0, y: 248.3}
   m_Pivot: {x: 0, y: 1}

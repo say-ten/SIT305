@@ -6,6 +6,8 @@ namespace RPGGame
 {
     public class Monster : Character
     {
+        public string Description { get; set; }
+
         public override void Attacked(int hp)
         {
             base.Attacked(hp);

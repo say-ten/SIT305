@@ -8,6 +8,7 @@ namespace RPGGame
     {
         void Start()
         {
+            Description = "Slime";
             Health = 20;
             Attack = 5;
             Defence = 5;

@@ -20,7 +20,7 @@ namespace RPGGame
             Monsters.AddRange(GetComponents<Monster>());
         }
 
-        public Monster GetRandomEnemy()
+        public Monster GetRandomMonster()
         {
             return Monsters[Random.Range(0, Monsters.Count)];
         }
