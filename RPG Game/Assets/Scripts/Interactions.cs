@@ -101,14 +101,22 @@ namespace RPGGame
 
         public void Pickup()
         {
-//            player.AddItem(this.Monster.Inventory[0]);
-            Console.Instance.Entry(string.Format(
-                "<color=#56FFC7FF>You've defeated {0}. Searching the remains, {1} found!</color>",
-                this.Monster.Description, this.Monster.Inventory[0]
-            ));
+            if (Random.Range(0, 19) == 0)
+            {
+                player.AddItem(this.Monster.Inventory[0]);
+                player.AddItem(this.Monster.Inventory[1]);
+                Console.Instance.Entry(string.Format("<color=#56FFC7FF>You've defeated {0}. Searching the remains, {1} and {2} found!</color>",
+                    this.Monster.Description, this.Monster.Inventory[0], this.Monster.Inventory[1]));
+            }
+            else
+            {
+                player.AddItem(this.Monster.Inventory[0]);
+                Console.Instance.Entry(string.Format("<color=#56FFC7FF>You've defeated {0}. Searching the remains, {1} found!</color>",
+                    this.Monster.Description, this.Monster.Inventory[0]));
+            }
             this.Monster = null;
             player.Investigate();
-            //            UIController.OnMonsterUpdate(this.Monster);
+//            UIController.OnMonsterUpdate(this.Monster);
         }
     }
 }

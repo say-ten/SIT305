@@ -13,6 +13,7 @@ namespace RPGGame
             Attack = 12;
             Defence = 7;
             Inventory.Add("Lion monster core");
+            Inventory.Add("Green Gem");
         }
     }
 }

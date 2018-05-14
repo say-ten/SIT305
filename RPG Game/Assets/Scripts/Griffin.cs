@@ -13,6 +13,7 @@ namespace RPGGame
             Attack = 10;
             Defence = 10;
             Inventory.Add("Griffin monster core");
+            Inventory.Add("Blue Gem");
         }
     }
 }

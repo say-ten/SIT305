@@ -16,10 +16,6 @@ namespace RPGGame
             else
                 Instance = this;
 
-            Items.Add("Blue Gem");
-            Items.Add("Red Gem");
-            Items.Add("Green Gem");
-            Items.Add("Yellow Gem");
             Items.Add("Rainbow Gem");
         }
     }

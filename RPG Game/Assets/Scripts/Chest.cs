@@ -27,11 +27,11 @@ namespace RPGGame
             }
             else if (Random.Range(0, 49) == 0)
             {
-                Item = ItemDatabase.Instance.Items[4];
+                Item = Item = ItemDatabase.Instance.Items[0];
             }
             else
             {
-                Debug.Log("The chest is empty.");
+                Console.Instance.Entry("The chest is empty.");
             }
         }
     }

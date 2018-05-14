@@ -12,11 +12,8 @@ namespace RPGGame
             Health = 25;
             Attack = 7;
             Defence = 5;
-
-            if (Random.Range(0, 19) == 0)
-            {
-                Inventory.Add(ItemDatabase.Instance.Items[0]);
-            }
+            Inventory.Add("Boar monster core");
+            Inventory.Add("Yellow Gem");
         }
     }
 }

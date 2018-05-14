@@ -13,6 +13,7 @@ namespace RPGGame
             Attack = 5;
             Defence = 5;
             Inventory.Add("Slime monster core");
+            Inventory.Add("Red Gem");
         }
     }
 }
