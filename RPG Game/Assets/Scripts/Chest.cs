@@ -13,22 +13,25 @@ namespace RPGGame
 
         public Chest()
         {
-            if (Random.Range(0,7) == 2)
+            if (Random.Range(0,9) == 0)
             {
                 Trap = true;
             }
-            else if (Random.Range(0,5) == 2)
+            else if (Random.Range(0,4) == 0)
             {
                 Potion = true;
             }
-            else if(Random.Range(0,5) == 2)
+            else if(Random.Range(0,2) == 0)
             {
                 Monster = MonsterDatabase.Instance.GetRandomMonster();
             }
+            else if (Random.Range(0, 49) == 0)
+            {
+                Item = ItemDatabase.Instance.Items[4];
+            }
             else
             {
-                //int itemToAdd = Random.Range(0, ItemDatabase.Instance.Items.Count);
-                //Item = ItemDatabase.Instance.Items[itemToAdd];
+                Debug.Log("The chest is empty.");
             }
         }
     }

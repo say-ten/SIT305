@@ -12,7 +12,11 @@ namespace RPGGame
             Health = 25;
             Attack = 7;
             Defence = 5;
-            Inventory.Add("Boar monster core");
+
+            if (Random.Range(0, 19) == 0)
+            {
+                Inventory.Add(ItemDatabase.Instance.Items[0]);
+            }
         }
     }
 }

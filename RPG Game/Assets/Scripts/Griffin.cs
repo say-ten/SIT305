@@ -11,7 +11,7 @@ namespace RPGGame
             Description = "Griffin";
             Health = 30;
             Attack = 10;
-            Defence = 5;
+            Defence = 10;
             Inventory.Add("Griffin monster core");
         }
     }
