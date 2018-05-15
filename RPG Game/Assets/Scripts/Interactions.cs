@@ -58,15 +58,21 @@ namespace RPGGame
             }
             else if (chest.Potion)
             {
-                player.Attacked(-10);
+                player.Attacked(-20);
                 Console.Instance.Entry("Found a potion, gain 10 Health.");
             }
             else if (chest.Monster)
             {
                 player.Dungeon.Monster = chest.Monster;
                 player.Dungeon.Chest = null;
-                Console.Instance.Entry("Monster jumped out of the box");
+                Console.Instance.Entry("Monster jumped out of the box!");
                 player.Investigate();
+            }
+            else
+            {
+                player.AddItem(chest.Item);
+                UIController.OnPlayerInventoryChange();
+                Console.Instance.Entry("You found: " + chest.Item);
             }
             player.Dungeon.Chest = null;
             dynamicControls[3].interactable = false;
@@ -114,9 +120,9 @@ namespace RPGGame
                 Console.Instance.Entry(string.Format("<color=#56FFC7FF>You've defeated {0}. Searching the remains, {1} found!</color>",
                     this.Monster.Description, this.Monster.Inventory[0]));
             }
-            this.Monster = null;
+            player.Dungeon.Monster = null;
+            UIController.OnMonsterUpdate(null);
             player.Investigate();
-            UIController.OnMonsterUpdate(this.Monster);
         }
     }
 }

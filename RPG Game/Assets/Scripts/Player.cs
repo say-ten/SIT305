@@ -16,7 +16,8 @@ namespace RPGGame
         void Start()
         {
             Floor = 0;
-            Health = 30;
+            Health = 50;
+            MaxHealth = 100;
             Attack = 15;
             Defence = 5;
             Inventory = new List<string>();
@@ -87,20 +88,20 @@ namespace RPGGame
         public void AddItem(string item)
         {
             Inventory.Add(item);
+            UIController.OnPlayerInventoryChange();
         }
 
         public void AddItem(int item)
         {
-            Console.Instance.Entry("Given item");
             Inventory.Add(ItemDatabase.Instance.Items[item]);
             UIController.OnPlayerInventoryChange();
         }
 
         public override void Attacked(int hp)
         {
-            UIController.OnPlayerStatChange();
             Console.Instance.Entry("You have taken damage");
             base.Attacked(hp);
+            UIController.OnPlayerStatChange();
         }
 
         public override void Dead()

@@ -7,6 +7,7 @@ namespace RPGGame
     public class Character : MonoBehaviour
     {
         public int Health { get; set; }
+        public int MaxHealth { get; set; }
         public int Attack { get; set; }
         public int Defence { get; set; }
         public Vector2 RoomIndex { get; set; }
@@ -23,7 +24,7 @@ namespace RPGGame
 
         public virtual void Dead()
         {
-            Console.Instance.Entry("Game Over, You have died.");
+            Debug.Log("Game Over, You have died.");
         }
     }
 }
