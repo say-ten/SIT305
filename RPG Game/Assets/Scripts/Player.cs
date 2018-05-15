@@ -21,8 +21,8 @@ namespace RPGGame
             Defence = 5;
             Inventory = new List<string>();
             RoomIndex = new Vector2(2, 2);
-            /*            UIController.OnPlayerStatChange();
-                        UIController.OnPlayerInventoryChange();*/
+            UIController.OnPlayerStatChange();
+            UIController.OnPlayerInventoryChange();
             this.Dungeon = region.Dungeon[(int)RoomIndex.x, (int)RoomIndex.y];
             this.Dungeon.Empty = true;
         }
@@ -92,12 +92,13 @@ namespace RPGGame
         public void AddItem(int item)
         {
             Console.Instance.Entry("Given item");
-            //            Inventory.Add(ItemDatabase.Instance.Items[item]);
-            //            UIController.OnPlayerInventoryChange();
+            Inventory.Add(ItemDatabase.Instance.Items[item]);
+            UIController.OnPlayerInventoryChange();
         }
 
         public override void Attacked(int hp)
         {
+            UIController.OnPlayerStatChange();
             Debug.Log("You have taken damage");
             base.Attacked(hp);
         }

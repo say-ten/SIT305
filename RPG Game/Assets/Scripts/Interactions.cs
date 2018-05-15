@@ -35,7 +35,7 @@ namespace RPGGame
             this.Monster = player.Dungeon.Monster;
             dynamicControls[0].interactable = true;
             dynamicControls[1].interactable = true;
-            //            UIController.OnMonsterUpdate(this.Monster);
+            UIController.OnMonsterUpdate(this.Monster);
         }
 
         public void StartChest()
@@ -86,7 +86,7 @@ namespace RPGGame
         {
             int monsterDamageAmount = (int)(Random.value * (Monster.Attack - (player.Defence * .5f)));
             player.Dungeon.Monster = null;
-            //           UIController.OnMonsterUpdate(null);
+            UIController.OnMonsterUpdate(null);
             player.Attacked(monsterDamageAmount);
             Console.Instance.Entry("<color=#59ffa1>During the escape the monster dealt <b>" + monsterDamageAmount + "</b> damage!</color>");
             player.Investigate();
@@ -116,7 +116,7 @@ namespace RPGGame
             }
             this.Monster = null;
             player.Investigate();
-//            UIController.OnMonsterUpdate(this.Monster);
+            UIController.OnMonsterUpdate(this.Monster);
         }
     }
 }

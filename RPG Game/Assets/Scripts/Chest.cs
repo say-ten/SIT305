@@ -27,7 +27,7 @@ namespace RPGGame
             }
             else if (Random.Range(0, 49) == 0)
             {
-                Item = Item = ItemDatabase.Instance.Items[0];
+                Item = ItemDatabase.Instance.Items[0];
             }
             else
             {

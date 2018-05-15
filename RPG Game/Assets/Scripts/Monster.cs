@@ -10,6 +10,7 @@ namespace RPGGame
 
         public override void Attacked(int hp)
         {
+            UIController.OnMonsterUpdate(this);
             base.Attacked(hp);
             Debug.Log("");
         }
