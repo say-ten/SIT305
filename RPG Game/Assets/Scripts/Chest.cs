@@ -13,6 +13,8 @@ namespace RPGGame
 
         public Chest()
         {
+            Monster = Random.Range(0, 5) == 2 ? MonsterDatabase.Instance.GetRandomMonster() : null;
+            Trap = Random.Range(0, 7) == 2;
             if (Random.Range(0,9) == 0)
             {
                 Trap = true;
@@ -21,17 +23,13 @@ namespace RPGGame
             {
                 Potion = true;
             }
-            else if(Random.Range(0,2) == 0)
+            else if (Random.Range(0,2) == 0)
             {
                 Monster = MonsterDatabase.Instance.GetRandomMonster();
             }
             else if (Random.Range(0, 49) == 0)
             {
                 Item = ItemDatabase.Instance.Items[0];
-            }
-            else
-            {
-                Console.Instance.Entry("The chest is empty.");
             }
         }
     }

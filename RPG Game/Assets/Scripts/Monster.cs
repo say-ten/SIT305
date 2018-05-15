@@ -17,7 +17,7 @@ namespace RPGGame
 
         public override void Dead()
         {
-            Debug.Log("You have killed the monster");
+            Console.Instance.Entry("You have killed the monster");
         }
     }
 }

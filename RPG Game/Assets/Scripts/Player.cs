@@ -99,13 +99,13 @@ namespace RPGGame
         public override void Attacked(int hp)
         {
             UIController.OnPlayerStatChange();
-            Debug.Log("You have taken damage");
+            Console.Instance.Entry("You have taken damage");
             base.Attacked(hp);
         }
 
         public override void Dead()
         {
-            Debug.Log("You have died. Game over!");
+            Console.Instance.Entry("You have died. Game over!");
             base.Dead();
         }
     }

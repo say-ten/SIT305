@@ -23,7 +23,7 @@ namespace RPGGame
 
         public virtual void Dead()
         {
-            Debug.Log("Game Over, You have died.");
+            Console.Instance.Entry("Game Over, You have died.");
         }
     }
 }
