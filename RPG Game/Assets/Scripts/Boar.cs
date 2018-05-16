@@ -4,25 +4,27 @@ using UnityEngine;
 using System.IO;
 
 namespace RPGGame
-
 {
-    [System.Serializable]
     public class Boar : Monster
     {
-        string filePath;
-        string jsonString;
+        //string filePath;
+        //string jsonString;
 
         void Start()
         {
-            filePath = Application.streamingAssetsPath + "/monsterDatabase.json";
+            
+            /*filePath = Application.streamingAssetsPath + "/monsterDatabase.json";
             jsonString = File.ReadAllText(filePath);
-            Character Boar = JsonUtility.FromJson<Character>(jsonString);
-            Description = "Boar";
-            Health = Boar.Health;
-            Attack = Boar.Attack;
-            Defence = Boar.Defence;
-            Inventory = Boar.Inventory;
-        }
+            Monster stats = JsonUtility.FromJson<Monster>(jsonString);
+            Description = stats.Description;
+            monsterHealth = stats.monsterHealth;
+            monsterAttack = stats.monsterAttack;
+            monsterDefence = stats.monsterDefence;*/
 
+            Description = "Boar";
+            monsterHealth = 20;
+            monsterAttack = 10;
+            monsterDefence = 5;
+        }
     }
 }

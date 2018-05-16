@@ -4,31 +4,27 @@ using UnityEngine;
 
 namespace RPGGame
 {
-    public interface IBaddie
-    {
-        void Cry();
-        string Description { get; set; }
-    }
-
-    public class Monster : Character
+    public class Monster : MonoBehaviour
     {
         public string Description { get; set; }
+        public int monsterHealth { get; set; }
+        public int monsterMaxHealth { get; set; }
+        public int monsterAttack { get; set; }
+        public int monsterDefence { get; set; }
+        public Vector2 monsterRoomIndex { get; set; }
 
-        public override void Attacked(int hp)
+        public virtual void damageTaken(int amount)
         {
-            base.Attacked(hp);
-            UIController.OnMonsterUpdate(this);
+            monsterHealth -= amount;
+            if (monsterHealth <= 0)
+            {
+                Die();
+            }
         }
 
-        public void Cry()
+        public virtual void Die()
         {
-        }
-
-        public override void Dead()
-        {
-            Health = MaxHealth;
-            Console.Instance.Entry("You have killed the monster");
-            Interactions.OnMonsterDead();
+            Console.Instance.Entry("You killed the monster!");
         }
     }
 }

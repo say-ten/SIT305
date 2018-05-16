@@ -9,11 +9,9 @@ namespace RPGGame
         void Start()
         {
             Description = "Lion";
-            Health = 40;
-            Attack = 12;
-            Defence = 7;
-            Inventory.Add("Lion monster core");
-            Inventory.Add("Green Gem");
+            monsterHealth = 30;
+            monsterAttack = 20;
+            monsterDefence = 10;
         }
     }
 }

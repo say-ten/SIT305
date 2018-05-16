@@ -6,23 +6,23 @@ namespace RPGGame
 {
     public class MonsterDatabase : MonoBehaviour
     {
-        public List<Monster> Monsters { get; set; } = new List<Monster>();
+        public List<Monster> monsterList { get; set; } = new List<Monster>();
         public static MonsterDatabase Instance { get; set; }
         private void Awake()
         {
             Instance = this;
             foreach (Monster monster in GetComponents<Monster>())
             {
-                Debug.Log("Monster Found");
-                Monsters.Add(monster);
+                Debug.Log("A monster appeared!");
+                monsterList.Add(monster);
             }
 
-            Monsters.AddRange(GetComponents<Monster>());
+            monsterList.AddRange(GetComponents<Monster>());
         }
 
         public Monster GetRandomMonster()
         {
-            return Monsters[Random.Range(0, Monsters.Count)];
+            return monsterList[Random.Range(0, monsterList.Count)];
         }
     }
 }

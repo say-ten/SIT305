@@ -53,26 +53,26 @@ namespace RPGGame
             Chest chest = player.Dungeon.Chest;
             if (chest.Trap)
             {
-                player.Attacked(5);
-                Console.Instance.Entry("Trap disguised as a chest, lost 5 health.");
+                player.damageTaken(5);
+                Console.Instance.Entry("It was a trap! You lost 5 health.");
             }
             else if (chest.Potion)
             {
-                player.Attacked(-20);
-                Console.Instance.Entry("Found a potion, gain 10 Health.");
+                player.damageTaken(-20);
+                Console.Instance.Entry("You found a potion! You gained 10 health.");
             }
             else if (chest.Monster)
             {
                 player.Dungeon.Monster = chest.Monster;
                 player.Dungeon.Chest = null;
-                Console.Instance.Entry("Monster jumped out of the box!");
+                Console.Instance.Entry("A monster appeared!");
                 player.Investigate();
             }
             else
             {
                 player.AddItem(chest.Item);
                 UIController.OnPlayerInventoryChange();
-                Console.Instance.Entry("You found: " + chest.Item);
+                Console.Instance.Entry("You found a " + chest.Item + "!");
             }
             player.Dungeon.Chest = null;
             dynamicControls[3].interactable = false;
@@ -80,21 +80,21 @@ namespace RPGGame
 
         public void Attack()
         {
-            int playerDamageAmount = (int)(Random.value * (player.Attack - Monster.Defence));
-            int monsterDamageAmount = (int)(Random.value * (Monster.Attack - player.Defence));
-            Console.Instance.Entry("<color=#59ffa1>You dealt <b>" + playerDamageAmount + "</b> damage!</color>");
-            Console.Instance.Entry("<color=#59ffa1>The monster attacked dealing <b>" + monsterDamageAmount + "</b> damage back!</color>");
-            player.Attacked(monsterDamageAmount);
-            Monster.Attacked(playerDamageAmount);
+            int playerDamageAmount = (int)(Random.value * (player.playerAttack - Monster.monsterDefence));
+            int monsterDamageAmount = (int)(Random.value * (Monster.monsterAttack - player.playerDefence));
+            Console.Instance.Entry("<color=#59ffa1>You dealt <b>" + playerDamageAmount + "</b> damage!</colour>");
+            Console.Instance.Entry("<color=#59ffa1>The monster attacked, dealing <b>" + monsterDamageAmount + "</b> damage!</colour>");
+            player.damageTaken(monsterDamageAmount);
+            Monster.damageTaken(playerDamageAmount);
         }
 
         public void Escape()
         {
-            int monsterDamageAmount = (int)(Random.value * (Monster.Attack - (player.Defence * .5f)));
+            int monsterDamageAmount = (int)(Random.value * (Monster.monsterAttack - (player.playerDefence * .5f)));
             player.Dungeon.Monster = null;
             UIController.OnMonsterUpdate(null);
-            player.Attacked(monsterDamageAmount);
-            Console.Instance.Entry("<color=#59ffa1>During the escape the monster dealt <b>" + monsterDamageAmount + "</b> damage!</color>");
+            player.damageTaken(monsterDamageAmount);
+            Console.Instance.Entry("<colour=#59ffa1>During your escape, the monster dealt <b>" + monsterDamageAmount + "</b> damage!</colour>");
             player.Investigate();
         }
 
@@ -102,23 +102,16 @@ namespace RPGGame
         {
             StartCoroutine(player.region.GenerateFloor());
             player.Floor += 1;
-            Console.Instance.Entry("You found an exit to floor: " + player.Floor);
+            Console.Instance.Entry("You found an exit to floor " + player.Floor + "!");
         }
 
         public void Pickup()
         {
-            if (Random.Range(0, 19) == 0)
             {
-                player.AddItem(this.Monster.Inventory[0]);
-                player.AddItem(this.Monster.Inventory[1]);
-                Console.Instance.Entry(string.Format("<color=#56FFC7FF>You've defeated {0}. Searching the remains, {1} and {2} found!</color>",
-                    this.Monster.Description, this.Monster.Inventory[0], this.Monster.Inventory[1]));
-            }
-            else
-            {
-                player.AddItem(this.Monster.Inventory[0]);
-                Console.Instance.Entry(string.Format("<color=#56FFC7FF>You've defeated {0}. Searching the remains, {1} found!</color>",
-                    this.Monster.Description, this.Monster.Inventory[0]));
+                int randomNumber = Random.Range(0, 3);
+                player.AddItem(ItemDatabase.Instance.itemList[randomNumber]);
+                Console.Instance.Entry(string.Format("<colour=#56FFC7FF>You've defeated {0}. Searching the remains, {1} found!</colour>",
+                    this.Monster.Description, ItemDatabase.Instance.itemList[randomNumber]));
             }
             player.Dungeon.Monster = null;
             UIController.OnMonsterUpdate(null);

@@ -27,7 +27,7 @@ namespace RPGGame
 
         public void UpdatePlayerStats()
         {
-            playerStatsText.text = string.Format("Player: {0} health, {1} attack, {2} defence", player.Health, player.Attack, player.Defence);
+            playerStatsText.text = string.Format("Player: {0} health, {1} attack, {2} defence", player.playerHealth, player.playerAttack, player.playerDefence);
         }
 
         public void UpdatePlayerInventory()
@@ -41,7 +41,7 @@ namespace RPGGame
         public void UpdateMonsterStats(Monster monster)
         {
             if (monster)
-                monsterStatsText.text = string.Format("{0}: {1} health, {2} attack, {3} defence", monster.Description, monster.Health, monster.Attack, monster.Defence);
+                monsterStatsText.text = string.Format("{0}: {1} health, {2} attack, {3} defence", monster.Description, monster.monsterHealth, monster.monsterAttack, monster.monsterDefence);
             else
                 monsterStatsText.text = "";
         }

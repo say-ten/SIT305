@@ -22,13 +22,13 @@ namespace RPGGame
 
         public Dungeon()
         {
-            int roll = Random.Range(0,30);
-            if (roll > 0 && roll < 6)
+            int roll = Random.Range(0,29);
+            if (roll >= 0 && roll <= 9)
             {
                 Monster = MonsterDatabase.Instance.GetRandomMonster();
-                Monster.RoomIndex = RoomIndex;
+                Monster.monsterRoomIndex = RoomIndex;
             }
-            else if (roll > 15 && roll < 20)
+            else if (roll >= 10 && roll <= 19)
             {
                 Chest = new Chest();
             }

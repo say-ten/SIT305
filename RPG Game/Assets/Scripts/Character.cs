@@ -4,28 +4,27 @@ using UnityEngine;
 
 namespace RPGGame
 {
-    [System.Serializable]
     public class Character : MonoBehaviour
     {
-        public int Health { get; set; }
-        public int MaxHealth { get; set; }
-        public int Attack { get; set; }
-        public int Defence { get; set; }
-        public Vector2 RoomIndex { get; set; }
+        public int playerHealth { get; set; }
+        public int playerMaxHealth { get; set; }
+        public int playerAttack { get; set; }
+        public int playerDefence { get; set; }
+        public Vector2 playerRoomIndex { get; set; }
         public List<string> Inventory { get; set; } = new List<string>();
 
-        public virtual void Attacked(int hp)
+        public virtual void damageTaken(int amount)
         {
-            Health -= hp;
-            if (Health <= 0)
+            playerHealth -= amount;
+            if (playerHealth <= 0)
             {
-                Dead();
+                Die();
             }
         }
 
-        public virtual void Dead()
+        public virtual void Die()
         {
-            Debug.Log("Game Over, You have died.");
+            Debug.Log("You died! Game over!");
         }
     }
 }

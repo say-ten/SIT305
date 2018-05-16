@@ -9,11 +9,9 @@ namespace RPGGame
         void Start()
         {
             Description = "Griffin";
-            Health = 30;
-            Attack = 10;
-            Defence = 10;
-            Inventory.Add("Griffin monster core");
-            Inventory.Add("Blue Gem");
+            monsterHealth = 25;
+            monsterAttack = 15;
+            monsterDefence = 15;
         }
     }
 }
