@@ -83,4 +83,10 @@ May 14, 2018:
   
    May 17, 2018:
 -------------------------------------------------------------
-  - Re-coding of classes and methods to implement external text files as data [Alex]
+  - Re-coding of classes and methods to prepare implemention of external text files (JSON) as data [Alex]
+    - Player Class
+    - Character Class
+    - Monster Class
+    - ItemDatabase Class
+    - Interactions Class
+    - Chest Class
