@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace RPGGame
 {
+    [System.Serializable]
     public class Character : MonoBehaviour
     {
         public int Health { get; set; }

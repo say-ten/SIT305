@@ -1,0 +1,7 @@
+{
+	"Description": "Boar",
+	"Health": 25,
+	"Attack": 7,
+	"Defence": 5,
+	"Inventory": ["Boar Monster Core", "Yellow Gem"]
+}
