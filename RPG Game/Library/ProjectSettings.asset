@@ -602,7 +602,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 22f5a1e7-b7a8-4096-a306-1faf51e25099
   projectName: RPG Game
   organizationId: anthonyea
