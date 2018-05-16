@@ -258,6 +258,7 @@
     <Compile Include="Assets\Scripts\MonsterDatabase.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Region.cs" />
+    <Compile Include="Assets\Scripts\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\Slime.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
   </ItemGroup>

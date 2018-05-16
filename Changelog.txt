@@ -78,3 +78,5 @@ May 14, 2018:
   May 15, 2018:
 -------------------------------------------------------------
   - Added main menu [Anthony]
+  - Added background music [Anthony]
+  - Added volume controls [Anthony]

@@ -2,17 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
-public class MainMenu : MonoBehaviour {
-
-public void StartGame()
+namespace RPGGame
+{
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+        public AudioMixer audioMixer;
 
-public void QuitGame()
-    {
-        Debug.Log("Quit game");
-        Application.Quit();
+        public void StartGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        public void QuitGame()
+        {
+            Debug.Log("Quit game");
+            Application.Quit();
+        }
+
+        public void VolumeLevel(float volume)
+        {
+            audioMixer.SetFloat("volume", volume);
+        }
+
+        public void Mute()
+        {
+            AudioListener.pause = !AudioListener.pause;
+        }
     }
 }
