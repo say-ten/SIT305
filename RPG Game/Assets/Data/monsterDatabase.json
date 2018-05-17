@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "Bore":
         {
             "Description": "Boar",
@@ -36,7 +35,6 @@
             "Defence": 10,
             "Inventory": ["Lion Monster Core", "Green Gem"]
         }
-=======
 	"Bore":
 		{
 			"Description": "Boar",
@@ -73,5 +71,4 @@
 			"Defence": 10,
 			"Inventory": ["Lion Monster Core", "Green Gem"]
 		}
->>>>>>> ae17f31d401b6062dbea140ab1f55c1acfb43992
 }
