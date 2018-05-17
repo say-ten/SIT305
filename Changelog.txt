@@ -90,10 +90,14 @@ May 14, 2018:
     - ItemDatabase Class
     - Interactions Class
     - Chest Class
-
+  - Bug fixes [Anthony]
+    - Fixed unlimited exit floors
+    - Fixed monster 0 hp on re-encounter
+  - Cleanup code
 
 Future Features to be Implemented
 -------------------------------------------------------------
-  - 
-  - 
-  - 
+  - Fix monster stats not set to null after killing it
+  - Fix landing on floor exit on game start
+  - Implement game sound effects
+  - Implement a minimap to show location in 10x10 grid
