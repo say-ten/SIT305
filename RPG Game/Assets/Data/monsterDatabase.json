@@ -1,7 +1,38 @@
 {
-	"Description": "Boar",
-	"Health": 25,
-	"Attack": 7,
-	"Defence": 5,
-	"Inventory": ["Boar Monster Core", "Yellow Gem"]
+    "Bore":
+        {
+            "Description": "Boar",
+            "Health": 25,
+            "MaxHealth" = 20,
+            "Attack": 7,
+            "Defence": 5,
+            "Inventory": ["Boar Monster Core", "Yellow Gem"]
+        },
+    "Slime":
+        {
+            "Description": "Slime",
+            "Health": 20,
+            "MaxHealth" = 20,
+            "Attack": 5,
+            "Defence": 5,
+            "Inventory": ["Slime Monster Core", "Red Gem"]
+        },
+    "Griffin":
+        {
+            "Description": "Griffin",
+            "Health": 30,
+            "MaxHealth" =30,
+            "Attack":20,
+            "Defence": 5,
+            "Inventory": ["Griffin Monster Core", "Blue Gem"]
+        },
+    "Lion":
+        {
+            "Description": "Lion",
+            "Health": 30,
+            "MaxHealth" =40,
+            "Attack":15,
+            "Defence": 10,
+            "Inventory": ["Lion Monster Core", "Green Gem"]
+        }
 }

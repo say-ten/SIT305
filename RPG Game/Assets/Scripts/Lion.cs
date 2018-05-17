@@ -5,10 +5,10 @@
         internal void Start()
         {
             Description = "Lion";
-            Health = 40;
+            Health = 30;
             MaxHealth = 40;
-            Attack = 12;
-            Defence = 7;
+            Attack = 15;
+            Defence = 10;
             Inventory.Add("Lion monster core");
             Inventory.Add("Green Gem");
         }

@@ -1,4 +1,5 @@
-WindowsStandalone
+Android
+2f332606b836e51d93c2aa652d317cd5 Assembly-CSharp.dll:RPGGame.MainMenu
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:RPGGame.Monster
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -148,4 +149,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 3a415ba23c5397dc6b836876d882becf Assembly-CSharp.dll:RPGGame.Interactions
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:RPGGame.Character
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:RPGGame.Griffin
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenu

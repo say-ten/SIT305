@@ -7,8 +7,8 @@
             Description = "Griffin";
             Health = 30;
             MaxHealth = 30;
-            Attack = 10;
-            Defence = 10;
+            Attack = 20;
+            Defence = 5;
             Inventory.Add("Griffin monster core");
             Inventory.Add("Blue Gem");
         }

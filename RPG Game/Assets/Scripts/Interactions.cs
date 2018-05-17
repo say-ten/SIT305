@@ -19,6 +19,7 @@
 
         private void Start()
         {
+            player.Investigate();
             OnMonsterDead += Pickup;
         }
 

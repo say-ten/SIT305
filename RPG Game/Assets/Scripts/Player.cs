@@ -17,7 +17,7 @@
         internal void Start()
         {
             Floor = 0;
-            Health = 50;
+            Health = 100;
             MaxHealth = 100;
             Attack = 15;
             Defence = 5;
@@ -67,7 +67,7 @@
             interactions.ResetDynamicControls();
             if (this.Dungeon.Empty)
             {
-                Console.Instance.Entry("Looking around you're in a empty room.");
+                Console.Instance.Entry("Searching, room empty");
             }
             else if (this.Dungeon.Chest != null)
             {
@@ -82,7 +82,7 @@
             else if (this.Dungeon.Exit)
             {
                 interactions.StartExit();
-                Console.Instance.Entry("Door to next floor found. Would you like to exit?");
+                Console.Instance.Entry("Door found. Would you like to exit?");
             }
         }
 

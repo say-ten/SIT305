@@ -7,7 +7,7 @@
             Description = "Boar";
             Health = 30;
             MaxHealth = 30;
-            Attack = 20;
+            Attack = 10;
             Defence = 10;
             Inventory.Add("Boar monster core");
             Inventory.Add("Yellow Gem");
