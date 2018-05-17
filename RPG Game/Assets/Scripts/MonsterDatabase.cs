@@ -1,28 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
+    using System.Collections.Generic;
+    using UnityEngine;
+
     public class MonsterDatabase : MonoBehaviour
     {
-        public List<Monster> monsterList { get; set; } = new List<Monster>();
+        public List<Monster> Monsters { get; set; } = new List<Monster>();
+
         public static MonsterDatabase Instance { get; set; }
+
         private void Awake()
         {
             Instance = this;
             foreach (Monster monster in GetComponents<Monster>())
             {
-                Debug.Log("A monster appeared!");
-                monsterList.Add(monster);
+                Debug.Log("Monster Found");
+                Monsters.Add(monster);
             }
 
-            monsterList.AddRange(GetComponents<Monster>());
+            Monsters.AddRange(GetComponents<Monster>());
         }
 
         public Monster GetRandomMonster()
         {
-            return monsterList[Random.Range(0, monsterList.Count)];
+            return Monsters[Random.Range(0, Monsters.Count)];
         }
     }
 }

@@ -6,6 +6,7 @@ Alex Ter    - 214119629 (Emotivism)
 
 # Application Platform
 - Developed using Unity (2017.2.0f3) and Visual Studio
+- Mobile Platform (Android)
 
 # How to load and emulate application
 - Download unity
@@ -17,4 +18,15 @@ Alex Ter    - 214119629 (Emotivism)
 # Major directory files
 - SIT305/RPG Game/Assets/
 - SIT305/RPG Game/Assets/Scripts/
-https://github.com/say-ten/SIT305/tree/master/RPG%20Game/Assets/Scripts
+- SIT305/RPG Game/Assets/Audio/
+- SIT305/RPG Game/Assets/Images/
+
+# Major Features
+- Navigation
+The player is able to navigate a 10x10 map through 4 different buttons allowing them to travel in the corrosponding direction.
+- Combat System
+The character and monsters have a set amount of hp,attack and defence. Every attack between each other takes into account your attack power - enemy defences. Defeating a monster will reward you with drops and finding chests can bring your hp back up with potions.
+- Settings Controls
+Allows the player to set volume percentage or disable it completly.
+
+# Major Functions/Methods

@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
+    using System.Collections.Generic;
+    using UnityEngine;
+
     public class ItemDatabase : MonoBehaviour
     {
-        public List<string> itemList { get; set; } = new List<string>();
+        public List<string> Items { get; set; } = new List<string>();
+
         public static ItemDatabase Instance { get; private set; }
 
         private void Awake()
@@ -16,11 +16,7 @@ namespace RPGGame
             else
                 Instance = this;
 
-            itemList.Add("Blue Gem");
-            itemList.Add("Red Gem");
-            itemList.Add("Yellow Gem");
-            itemList.Add("Green Gem");
-            itemList.Add("Rainbow Gem");
+            Items.Add("Rainbow Gem");
         }
     }
 }

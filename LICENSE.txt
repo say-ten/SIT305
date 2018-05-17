@@ -1,5 +1,9 @@
 Audio files
   - Game-Menu.mp3 
-    taken from http://soundimage.org/fantasywonder/
+    CC by Attribution 4.0
+    Eric Matyas
+    taken from soundimage.org/
   - Puzzle-Game.mp3 
-    taken from http://soundimage.org/fantasywonder/
+    CC by Attribution 4.0
+    Eric Matyas
+    taken from soundimage.org/

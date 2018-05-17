@@ -80,7 +80,7 @@ May 14, 2018:
   - Added main menu [Anthony]
   - Added background music [Anthony]
   - Added volume controls [Anthony]
-  
+
    May 17, 2018:
 -------------------------------------------------------------
   - Re-coding of classes and methods to prepare implemention of external text files (JSON) as data [Alex]
@@ -90,3 +90,10 @@ May 14, 2018:
     - ItemDatabase Class
     - Interactions Class
     - Chest Class
+
+
+Future Features to be Implemented
+-------------------------------------------------------------
+  - 
+  - 
+  - 

@@ -1,30 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
+    using System.Collections.Generic;
+    using UnityEngine;
+
+    [System.Serializable]
     public class Character : MonoBehaviour
     {
-        public int playerHealth { get; set; }
-        public int playerMaxHealth { get; set; }
-        public int playerAttack { get; set; }
-        public int playerDefence { get; set; }
-        public Vector2 playerRoomIndex { get; set; }
+        public int Health { get; set; }
+
+        public int MaxHealth { get; set; }
+
+        public int Attack { get; set; }
+
+        public int Defence { get; set; }
+
+        public Vector2 RoomIndex { get; set; }
+
         public List<string> Inventory { get; set; } = new List<string>();
 
-        public virtual void damageTaken(int amount)
+        public virtual void Attacked(int hp)
         {
-            playerHealth -= amount;
-            if (playerHealth <= 0)
+            Health -= hp;
+            if (Health <= 0)
             {
-                Die();
+                Dead();
             }
         }
 
-        public virtual void Die()
+        public virtual void Dead()
         {
-            Debug.Log("You died! Game over!");
+            Debug.Log("Game Over, You have died.");
         }
     }
 }

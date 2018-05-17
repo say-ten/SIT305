@@ -1,15 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
+    using UnityEngine;
+
     public class Dungeon : MonoBehaviour
     {
         public Chest Chest { get; set; }
+
         public Monster Monster { get; set; }
+
         public bool Exit { get; set; }
+
         public bool Empty { get; set; }
+
         public Vector2 RoomIndex { get; set; }
 
         public Dungeon(Chest chest, Monster monster, bool empty, bool exit)
@@ -22,21 +24,20 @@ namespace RPGGame
 
         public Dungeon()
         {
-            int roll = Random.Range(0,29);
-            if (roll >= 0 && roll <= 9)
+            int roll = Random.Range(0, 30);
+            if (roll > 0 && roll < 6)
             {
                 Monster = MonsterDatabase.Instance.GetRandomMonster();
-                Monster.monsterRoomIndex = RoomIndex;
+                Monster.RoomIndex = RoomIndex;
             }
-            else if (roll >= 10 && roll <= 19)
+            else if (roll > 15 && roll < 20)
             {
                 Chest = new Chest();
             }
-            else 
+            else
             {
                 Empty = true;
             }
-
         }
     }
 }

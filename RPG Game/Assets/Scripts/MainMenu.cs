@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
+    using UnityEngine;
+    using UnityEngine.Audio;
+    using UnityEngine.SceneManagement;
+
     public class MainMenu : MonoBehaviour
     {
         public AudioMixer audioMixer;

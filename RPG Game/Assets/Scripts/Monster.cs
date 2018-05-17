@@ -1,30 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
-    public class Monster
+    public interface IBaddie
+    {
+        void Cry();
+
+        string Description { get; set; }
+    }
+
+    public class Monster : Character
     {
         public string Description { get; set; }
-        public int monsterHealth { get; set; }
-        public int monsterMaxHealth { get; set; }
-        public int monsterAttack { get; set; }
-        public int monsterDefence { get; set; }
-        public Vector2 monsterRoomIndex { get; set; }
 
-        public virtual void damageTaken(int amount)
+        public override void Attacked(int hp)
         {
-            monsterHealth -= amount;
-            if (monsterHealth <= 0)
-            {
-                Die();
-            }
+            base.Attacked(hp);
+            UIController.OnMonsterUpdate(this);
         }
 
-        public virtual void Die()
+        public void Cry()
         {
-            Console.Instance.Entry("You killed the monster!");
+        }
+
+        public override void Dead()
+        {
+            Console.Instance.Entry("You have killed the monster");
+            Interactions.OnMonsterDead();
+            Health = MaxHealth;
         }
     }
 }

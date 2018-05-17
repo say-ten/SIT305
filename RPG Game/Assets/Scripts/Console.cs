@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
+    using UnityEngine;
+    using UnityEngine.UI;
+
     public class Console : MonoBehaviour
     {
-        [SerializeField] Text logText;
+        [SerializeField] internal Text logText;
+
         public static Console Instance { get; set; }
 
-        void Awake()
+        internal void Awake()
         {
             if (Instance != null && Instance != this)
                 Destroy(this.gameObject);

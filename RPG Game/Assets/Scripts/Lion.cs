@@ -1,17 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
     public class Lion : Monster
     {
-        void Start()
+        internal void Start()
         {
             Description = "Lion";
-            monsterHealth = 30;
-            monsterAttack = 20;
-            monsterDefence = 10;
+            Health = 40;
+            MaxHealth = 40;
+            Attack = 12;
+            Defence = 7;
+            Inventory.Add("Lion monster core");
+            Inventory.Add("Green Gem");
         }
     }
 }

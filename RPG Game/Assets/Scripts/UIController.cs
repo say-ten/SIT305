@@ -1,24 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
+    using UnityEngine;
+    using UnityEngine.UI;
+
     public class UIController : MonoBehaviour
     {
         [SerializeField]
-        Player player;
+        internal Player player;
+
         [SerializeField]
-        Text playerStatsText, monsterStatsText, playerInventoryText;
+        internal Text playerStatsText, monsterStatsText, playerInventoryText;
+
         public delegate void OnPlayerUpdateHandler();
+
         public static OnPlayerUpdateHandler OnPlayerStatChange;
+
         public static OnPlayerUpdateHandler OnPlayerInventoryChange;
 
         public delegate void OnMonsterUpdateHandler(Monster monster);
+
         public static OnMonsterUpdateHandler OnMonsterUpdate;
 
-        void Start()
+        internal void Start()
         {
             OnPlayerStatChange += UpdatePlayerStats;
             OnPlayerInventoryChange += UpdatePlayerInventory;
@@ -27,7 +30,7 @@ namespace RPGGame
 
         public void UpdatePlayerStats()
         {
-            playerStatsText.text = string.Format("Player: {0} health, {1} attack, {2} defence", player.playerHealth, player.playerAttack, player.playerDefence);
+            playerStatsText.text = string.Format("Player: {0} health, {1} attack, {2} defence", player.Health, player.Attack, player.Defence);
         }
 
         public void UpdatePlayerInventory()
@@ -38,10 +41,11 @@ namespace RPGGame
                 playerInventoryText.text += item + " / ";
             }
         }
+
         public void UpdateMonsterStats(Monster monster)
         {
             if (monster)
-                monsterStatsText.text = string.Format("{0}: {1} health, {2} attack, {3} defence", monster.Description, monster.monsterHealth, monster.monsterAttack, monster.monsterDefence);
+                monsterStatsText.text = string.Format("{0}: {1} health, {2} attack, {3} defence", monster.Description, monster.Health, monster.Attack, monster.Defence);
             else
                 monsterStatsText.text = "";
         }

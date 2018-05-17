@@ -1,107 +1,114 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
+    using System.Collections.Generic;
+    using UnityEngine;
+
     public class Player : Character
     {
         public int Floor { get; set; }
+
         public Dungeon Dungeon { get; set; }
+
         [SerializeField]
-        Interactions interactions;
+        internal Interactions interactions;
+
         public Region region;
 
-        void Start()
+        internal void Start()
         {
             Floor = 0;
-            playerHealth = 100;
-            playerMaxHealth = 100;
-            playerAttack = 10;
-            playerDefence = 10;
+            Health = 50;
+            MaxHealth = 100;
+            Attack = 15;
+            Defence = 5;
             Inventory = new List<string>();
-            playerRoomIndex = new Vector2(2,2);
+            RoomIndex = new Vector2(2, 2);
             UIController.OnPlayerStatChange();
             UIController.OnPlayerInventoryChange();
-            this.Dungeon = region.Dungeon[(int)playerRoomIndex.x, (int)playerRoomIndex.y];
+            this.Dungeon = region.Dungeon[(int)RoomIndex.x, (int)RoomIndex.y];
             this.Dungeon.Empty = true;
         }
 
-        public void Direction(int direction)
+        public void Navigation(int direction)
         {
             if (Dungeon.Monster)
             {
                 return;
             }
-            if (direction == 0 && playerRoomIndex.y > 0)
+            if (direction == 0 && RoomIndex.y > 0)
             {
                 Console.Instance.Entry("Moved north.");
-                playerRoomIndex -= Vector2.up;
+                RoomIndex -= Vector2.up;
             }
-            if (direction == 1 && playerRoomIndex.y < region.Dungeon.GetLength(1) - 1)
+            if (direction == 1 && RoomIndex.y < region.Dungeon.GetLength(1) - 1)
             {
                 Console.Instance.Entry("Moved south.");
-                playerRoomIndex -= Vector2.down;
+                RoomIndex -= Vector2.down;
             }
-            if (direction == 2 && playerRoomIndex.x < region.Dungeon.GetLength(0) - 1)
+            if (direction == 2 && RoomIndex.x < region.Dungeon.GetLength(0) - 1)
             {
                 Console.Instance.Entry("Moved east.");
-                playerRoomIndex += Vector2.right;
+                RoomIndex += Vector2.right;
             }
-            if (direction == 3 && playerRoomIndex.x > 0)
+            if (direction == 3 && RoomIndex.x > 0)
             {
                 Console.Instance.Entry("Moved west.");
-                playerRoomIndex += Vector2.left;
+                RoomIndex += Vector2.left;
             }
-            if (this.Dungeon.RoomIndex != playerRoomIndex)
+            if (this.Dungeon.RoomIndex != RoomIndex)
                 Investigate();
         }
 
         public void Investigate()
         {
-            this.Dungeon = region.Dungeon[(int)playerRoomIndex.x, (int)playerRoomIndex.y];
+            this.Dungeon = region.Dungeon[(int)RoomIndex.x, (int)RoomIndex.y];
 
-            Debug.Log(playerRoomIndex);
+            Debug.Log(RoomIndex);
             interactions.ResetDynamicControls();
             if (this.Dungeon.Empty)
             {
-                Console.Instance.Entry("This room is empty.");
+                Console.Instance.Entry("Looking around you're in a empty room.");
             }
             else if (this.Dungeon.Chest != null)
             {
                 interactions.StartChest();
-                Console.Instance.Entry("Chest found, would you like to open it?");
+                Console.Instance.Entry("Chest found, open?");
             }
             else if (this.Dungeon.Monster != null)
             {
-                Console.Instance.Entry("You are being attacked by a " + Dungeon.Monster.Description + "! Select an action!");
+                Console.Instance.Entry("You are attacked by a " + Dungeon.Monster.Description + "! Select an action");
                 interactions.StartFight();
             }
             else if (this.Dungeon.Exit)
             {
                 interactions.StartExit();
-                Console.Instance.Entry("Next floor located. Would you like to exit?");
+                Console.Instance.Entry("Door to next floor found. Would you like to exit?");
             }
         }
 
         public void AddItem(string item)
         {
-            Console.Instance.Entry("You found an item!");
             Inventory.Add(item);
             UIController.OnPlayerInventoryChange();
         }
 
-        public override void damageTaken(int amount)
+        public void AddItem(int item)
         {
-            Console.Instance.Entry("You took damage!");
-            base.damageTaken(amount);
+            Inventory.Add(ItemDatabase.Instance.Items[item]);
+            UIController.OnPlayerInventoryChange();
+        }
+
+        public override void Attacked(int hp)
+        {
+            Console.Instance.Entry("You have taken damage");
+            base.Attacked(hp);
             UIController.OnPlayerStatChange();
         }
 
-        public override void Die()
+        public override void Dead()
         {
-            Console.Instance.Entry("You died! Game over!");
-            base.Die();
+            Console.Instance.Entry("You have died. Game over!");
+            base.Dead();
         }
     }
 }

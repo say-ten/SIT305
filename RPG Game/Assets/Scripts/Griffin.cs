@@ -1,17 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace RPGGame
+﻿namespace RPGGame
 {
     public class Griffin : Monster
     {
-        void Start()
+        internal void Start()
         {
             Description = "Griffin";
-            monsterHealth = 25;
-            monsterAttack = 15;
-            monsterDefence = 15;
+            Health = 30;
+            MaxHealth = 30;
+            Attack = 10;
+            Defence = 10;
+            Inventory.Add("Griffin monster core");
+            Inventory.Add("Blue Gem");
         }
     }
 }
