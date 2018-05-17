@@ -1924,17 +1924,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Information
-
-    Information
-
-    Information
-
-    Information
-
-    Information
-
-    Information'
+  m_Text: "Legal Attributions\n- Game-Menu.mp3 \r\n- Puzzle-Game.mp3 \r\n  CC by Attribution
+    4.0\r\n  Eric Matyas\r\n  taken from soundimage.org/"
 --- !u!222 &1311549156
 CanvasRenderer:
   m_ObjectHideFlags: 0
