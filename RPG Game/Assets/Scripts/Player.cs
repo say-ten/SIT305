@@ -16,9 +16,9 @@ namespace RPGGame
         {
             Floor = 0;
             playerHealth = 100;
-            playerMaxHealth = 500;
-            playerAttack = 40;
-            playerDefence = 20;
+            playerMaxHealth = 100;
+            playerAttack = 10;
+            playerDefence = 10;
             Inventory = new List<string>();
             playerRoomIndex = new Vector2(2,2);
             UIController.OnPlayerStatChange();

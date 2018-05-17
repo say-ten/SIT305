@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RPGGame
 {
-    public class Monster : MonoBehaviour
+    public class Monster
     {
         public string Description { get; set; }
         public int monsterHealth { get; set; }
