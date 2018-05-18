@@ -6,14 +6,14 @@
     public class Player : Character
     {
         public int Floor { get; set; }
-
         public Dungeon Dungeon { get; set; }
-
         [SerializeField]
         internal Interactions interactions;
-
         public Region region;
 
+        //sets player stats at the beginning of game as well as floor number
+        //calls to update the player status ui and inventory ui text
+        //makes sure that the character spawn location has no monsters
         internal void Start()
         {
             Floor = 0;
@@ -29,6 +29,8 @@
             this.Dungeon.Empty = true;
         }
 
+        //creates 4 movement options for north, south, east and west
+        //each direction is linked to a number which is inputted into the game buttons
         public void Navigation(int direction)
         {
             if (Dungeon.Monster)
@@ -59,6 +61,8 @@
                 Investigate();
         }
 
+        //checks current floor/roomindex location if the player has encountered anything
+        //displays different text output for the different options if player has encountered something
         public void Investigate()
         {
             this.Dungeon = region.Dungeon[(int)RoomIndex.x, (int)RoomIndex.y];
@@ -86,18 +90,21 @@
             }
         }
 
+        //adds item to player inventory
         public void AddItem(string item)
         {
             Inventory.Add(item);
             UIController.OnPlayerInventoryChange();
         }
 
+        //adds item to player inventory
         public void AddItem(int item)
         {
             Inventory.Add(ItemDatabase.Instance.Items[item]);
             UIController.OnPlayerInventoryChange();
         }
 
+        //calls the attacked funtion with how much damamge you have taken and updates player health
         public override void Attacked(int hp)
         {
             Console.Instance.Entry("You have taken damage");
@@ -105,6 +112,7 @@
             UIController.OnPlayerStatChange();
         }
 
+        //calls the dead method and lets player know they have died.
         public override void Dead()
         {
             Console.Instance.Entry("You have died. Game over!");

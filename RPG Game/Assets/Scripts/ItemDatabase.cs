@@ -9,6 +9,8 @@
 
         public static ItemDatabase Instance { get; private set; }
 
+        //checks for existing item database then loads new one
+        //adds items into the database for chest class
         private void Awake()
         {
             if (Instance != null && Instance != this)

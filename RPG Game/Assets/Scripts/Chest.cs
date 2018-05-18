@@ -4,14 +4,14 @@
 
     public class Chest : MonoBehaviour
     {
+        //public modifiers for all of the items in chest
         public Monster Monster { get; set; }
-
         public string Item { get; set; }
-
         public bool Trap { get; set; }
-
         public bool Potion { get; set; }
 
+        //randomizer for each of the items in chest 
+        //players can get traps, potions, monsters or items
         public Chest()
         {
             Monster = Random.Range(0, 5) == 2 ? MonsterDatabase.Instance.GetRandomMonster() : null;

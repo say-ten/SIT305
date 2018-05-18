@@ -12,15 +12,12 @@
         internal Text playerStatsText, monsterStatsText, playerInventoryText;
 
         public delegate void OnPlayerUpdateHandler();
-
         public static OnPlayerUpdateHandler OnPlayerStatChange;
-
         public static OnPlayerUpdateHandler OnPlayerInventoryChange;
-
         public delegate void OnMonsterUpdateHandler(Monster monster);
-
         public static OnMonsterUpdateHandler OnMonsterUpdate;
 
+        //updates all ui status on start
         internal void Start()
         {
             OnPlayerStatChange += UpdatePlayerStats;
@@ -28,11 +25,13 @@
             OnMonsterUpdate += UpdateMonsterStats;
         }
 
+        //updates player status in game ui
         public void UpdatePlayerStats()
         {
             playerStatsText.text = string.Format("Player: {0} health, {1} attack, {2} defence", player.Health, player.Attack, player.Defence);
         }
 
+        //updates the inventory items in game ui
         public void UpdatePlayerInventory()
         {
             playerInventoryText.text = "Items: ";
@@ -42,6 +41,7 @@
             }
         }
 
+        //updates the monster status in the game ui
         public void UpdateMonsterStats(Monster monster)
         {
             if (monster)

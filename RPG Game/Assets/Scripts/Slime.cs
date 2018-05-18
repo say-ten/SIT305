@@ -2,6 +2,7 @@
 {
     public class Slime : Monster
     {
+        //loading all the stats and items for monster slime
         internal void Start()
         {
             Description = "Slime";

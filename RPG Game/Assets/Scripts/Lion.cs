@@ -4,6 +4,7 @@
     {
         internal void Start()
         {
+            //loading all the stats and items for monster lion
             Description = "Lion";
             Health = 30;
             MaxHealth = 40;

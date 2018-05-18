@@ -9,20 +9,21 @@
 
         [SerializeField]
         internal Player player;
-
         [SerializeField]
         internal Button[] dynamicControls;
 
         public delegate void OnMonsterDeadHandler();
-
         public static OnMonsterDeadHandler OnMonsterDead;
 
+        //checks roomindex at the start of game as well as after every action
+        //if the monster dies it starts the pickup method
         private void Start()
         {
             player.Investigate();
             OnMonsterDead += Pickup;
         }
 
+        //turns off all the dynamic controls
         public void ResetDynamicControls()
         {
             foreach (Button button in dynamicControls)
@@ -31,6 +32,8 @@
             }
         }
 
+        //if a monster is found it will activate the required buttons to battle the monster
+        //buttons activated are attack and flee
         public void StartFight()
         {
             this.Monster = player.Dungeon.Monster;
@@ -39,16 +42,19 @@
             UIController.OnMonsterUpdate(this.Monster);
         }
 
+        //activated the open chest button
         public void StartChest()
         {
             dynamicControls[3].interactable = true;
         }
 
+        //activates the escape button
         public void StartExit()
         {
             dynamicControls[2].interactable = true;
         }
 
+        //method for deciding what happens for each item in chest as well as printing a console entry
         public void OpenChest()
         {
             Chest chest = player.Dungeon.Chest;
@@ -79,6 +85,8 @@
             dynamicControls[3].interactable = false;
         }
 
+        //method for what happens when attack button is pressed
+        //player and monster will lose hp depending on how much attack defence is calculated
         public void Attack()
         {
             int playerDamageAmount = (int)(Random.value * (player.Attack - Monster.Defence));
@@ -89,6 +97,8 @@
             Monster.Attacked(playerDamageAmount);
         }
 
+        //escape method for when escape button is pressed
+        //player will be attacked once but monster will be gone
         public void Escape()
         {
             int monsterDamageAmount = (int)(Random.value * (Monster.Attack - (player.Defence * .5f)));
@@ -99,6 +109,7 @@
             player.Investigate();
         }
 
+        //player will go up one floor level then generate a new roomindex map
         public void ExitFloor()
         {
             StartCoroutine(player.region.GenerateFloor());
@@ -107,6 +118,9 @@
             player.Investigate();
         }
 
+        //function for looting a monsters items when it dies
+        //depending on a percentage chance you will get normal items or special item
+        //prints what you find
         public void Pickup()
         {
             if (Random.Range(0, 19) == 0)
