@@ -1,3 +1,35 @@
-comment code (explain methods)
-github list of api/methods etc
+Methods/Functions/APIs
 
+#Main Menu
+StartGame()
+QuitGame()
+Volume()
+Mute()
+
+#Update Game UI
+UpdatePlayerStats()
+UpdateMonsterStats()
+UpdatePlayerInventory()
+Entry()
+
+#Related to buttons
+ResetDynamicControls()
+Navigation()
+Investigate()
+StartFight()
+StartChest()
+StartExit()
+OpenChest()
+Attack()
+Escape()
+ExitFloor()
+
+#Called when event is trggered
+Dungeon()
+GenerateFloor()
+GetRandomMonster()
+Pickup()
+AddItem()
+Attacked()
+Dead()
+Chest()
